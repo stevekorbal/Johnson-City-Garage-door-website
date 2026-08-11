@@ -57,8 +57,8 @@ export default function ContactView({ onNavigate }: { onNavigate: (path: string)
                 </div>
                 <div>
                   <span className="text-xs font-bold text-slate-400 uppercase tracking-wider block">Email Inquiries</span>
-                  <a href="mailto:contact@garagedoorrepairjohnsoncity.co" className="text-sm font-bold text-slate-800 hover:text-blue-900 transition-colors block mt-1">
-                    contact@garagedoorrepairjohnsoncity.co
+                  <a href="mailto:contact@garagedoorrepairjohnsoncity.com" className="text-sm font-bold text-slate-800 hover:text-blue-900 transition-colors block mt-1">
+                    contact@garagedoorrepairjohnsoncity.com
                   </a>
                   <span className="text-[11px] text-slate-500 block mt-0.5">We respond to estimates and emails within 2 hours.</span>
                 </div>
