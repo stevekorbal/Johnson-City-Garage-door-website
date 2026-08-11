@@ -88,7 +88,7 @@ const serviceContents: Record<string, ServiceContent> = {
       title: 'Schedule Your Repair',
       content: [
         'If your garage door isn\'t working properly, contact us today to schedule professional garage door repair in Johnson City.',
-        'Call (423) 555-8240 or complete our online contact form.'
+        'Call (423) 672-1770 or complete our online contact form.'
       ]
     }
   },
@@ -140,7 +140,7 @@ const serviceContents: Record<string, ServiceContent> = {
     outro: {
       title: 'Need Spring Repair?',
       content: [
-        'Call (423) 555-8240 for professional garage door spring repair in Johnson City.'
+        'Call (423) 672-1770 for professional garage door spring repair in Johnson City.'
       ]
     }
   },
@@ -187,7 +187,7 @@ const serviceContents: Record<string, ServiceContent> = {
     outro: {
       title: 'Call Today',
       content: [
-        'Schedule garage door opener repair by calling (423) 555-8240.'
+        'Schedule garage door opener repair by calling (423) 672-1770.'
       ]
     }
   },
@@ -227,7 +227,7 @@ const serviceContents: Record<string, ServiceContent> = {
       title: 'Request an Estimate',
       content: [
         'Contact us today to learn more about garage door opener installation in Johnson City.',
-        'Call (423) 555-8240.'
+        'Call (423) 672-1770.'
       ]
     }
   },
@@ -273,7 +273,7 @@ const serviceContents: Record<string, ServiceContent> = {
     outro: {
       title: 'Schedule Your Installation',
       content: [
-        'Call (423) 555-8240 for a free consultation on garage door installation in Johnson City.'
+        'Call (423) 672-1770 for a free consultation on garage door installation in Johnson City.'
       ]
     }
   },
@@ -320,7 +320,7 @@ const serviceContents: Record<string, ServiceContent> = {
     outro: {
       title: 'Contact Us Now',
       content: [
-        'If you need emergency garage door repair in Johnson City, call (423) 555-8240 immediately or submit our online contact form.'
+        'If you need emergency garage door repair in Johnson City, call (423) 672-1770 immediately or submit our online contact form.'
       ]
     }
   }
@@ -531,11 +531,11 @@ export default function ServiceView({ serviceId, onNavigate }: ServiceViewProps)
                 Our local crews are on stand-by with fully-stocked service vehicles. Get your garage door fixed today.
               </p>
               <a
-                href="tel:4235558240"
+                href="tel:4236721770"
                 className="bg-slate-950 hover:bg-slate-900 text-white font-black py-3 px-6 rounded-xl text-sm tracking-widest transition-all flex items-center justify-center gap-2"
               >
                 <PhoneCall className="w-4 h-4" />
-                (423) 555-8240
+                (423) 672-1770
               </a>
             </div>
 

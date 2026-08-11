@@ -173,15 +173,15 @@ export default function BlogPostView({ slug, onNavigate }: BlogPostViewProps) {
                 Have Questions or Need a Quick Estimate?
               </h3>
               <p className="text-blue-200 text-xs md:text-sm mt-1">
-                Call our licensed Johnson City repair technicians directly at (423) 555-8240.
+                Call our licensed Johnson City repair technicians directly at (423) 672-1770.
               </p>
             </div>
             <a
-              href="tel:4235558240"
+              href="tel:4236721770"
               className="bg-amber-500 hover:bg-amber-600 text-slate-950 font-black py-3.5 px-6 rounded-xl text-xs md:text-sm tracking-wide transition-all border border-amber-600 shrink-0 shadow-md flex items-center gap-2 cursor-pointer"
             >
               <Phone className="w-4 h-4 fill-current" />
-              CALL (423) 555-8240
+              CALL (423) 672-1770
             </a>
           </div>
 
@@ -235,10 +235,10 @@ export default function BlogPostView({ slug, onNavigate }: BlogPostViewProps) {
               </div>
 
               <a
-                href="tel:4235558240"
+                href="tel:4236721770"
                 className="mt-6 w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-black py-3 px-4 rounded-xl text-xs tracking-wider text-center transition-all block border border-amber-600 cursor-pointer"
               >
-                CALL NOW: (423) 555-8240
+                CALL NOW: (423) 672-1770
               </a>
             </div>
 

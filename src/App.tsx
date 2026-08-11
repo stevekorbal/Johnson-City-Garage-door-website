@@ -126,7 +126,8 @@ export default function App() {
         'provider': {
           '@type': 'LocalBusiness',
           'name': 'Tri-Cities Garage Door Repair',
-          'telephone': '+14235558240',
+          'telephone': '+14236721770',
+          'email': 'contact@garagedoorrepairjohnsoncity.co',
           'priceRange': '$$',
           'image': 'https://tricitiesgaragedoor.com/src/assets/images/garage_door_hero_1784628372796.jpg',
           'address': {
@@ -181,7 +182,8 @@ export default function App() {
           '@type': 'LocalBusiness',
           'name': `Tri-Cities Garage Door Repair - ${city.cityName}`,
           'description': city.intro,
-          'telephone': '+14235558240',
+          'telephone': '+14236721770',
+          'email': 'contact@garagedoorrepairjohnsoncity.co',
           'priceRange': '$$',
           'url': canonicalUrl,
           'address': {
@@ -253,7 +255,7 @@ export default function App() {
           break;
         case 'contact':
           title = 'Contact Us | Tri-Cities Garage Door Repair Johnson City TN';
-          description = 'Get in touch with our local team for emergency repairs or free estimates in Johnson City, TN. We\'re available 24/7 at (423) 555-8240.';
+          description = 'Get in touch with our local team for emergency repairs or free estimates in Johnson City, TN. We\'re available 24/7 at (423) 672-1770.';
           break;
         case 'privacy-policy':
           title = 'Privacy Policy | Tri-Cities Garage Door Repair';
@@ -277,7 +279,8 @@ export default function App() {
         'image': 'https://tricitiesgaragedoor.com/src/assets/images/garage_door_hero_1784628372796.jpg',
         '@id': 'https://tricitiesgaragedoor.com/',
         'url': 'https://tricitiesgaragedoor.com/',
-        'telephone': '+14235558240',
+        'telephone': '+14236721770',
+        'email': 'contact@garagedoorrepairjohnsoncity.co',
         'priceRange': '$$',
         'address': {
           '@type': 'PostalAddress',

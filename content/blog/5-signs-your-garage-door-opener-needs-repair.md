@@ -60,4 +60,4 @@ If you press your remote and hear the motor humming inside the ceiling unit, but
 
 If your garage door opener is showing any of these symptoms, don't wait for total breakdown. **Tri-Cities Garage Door Repair** services all major brands including LiftMaster, Chamberlain, Genie, and Craftsman.
 
-Contact our Johnson City technicians today at **[(423) 555-8240](tel:4235558240)** for fast diagnostic and repair services!
+Contact our Johnson City technicians today at **[(423) 672-1770](tel:4236721770)** for fast diagnostic and repair services!
