@@ -55,18 +55,29 @@ export default function LeadForm({ sourcePage = 'General Website', className = '
         }),
       });
 
-      const result = await response.json();
+      let result: any = null;
+      try {
+        const text = await response.text();
+        result = text ? JSON.parse(text) : {};
+      } catch {
+        result = {};
+      }
 
-      if (!response.ok) {
-        throw new Error(result.error || 'Failed to submit dispatch request.');
+      if (!response.ok || (result && result.success === false)) {
+        const errorText = (result && result.error)
+          ? result.error
+          : "Sorry, we couldn't send your request. Please call us directly.";
+        setStatus('error');
+        setErrorMessage(errorText);
+        return;
       }
 
       setStatus('success');
       console.log('Lead submitted successfully to /api/contact:', result);
     } catch (err: any) {
       console.error('Lead submission error:', err);
-      // Fallback gracefully so user still sees completion screen if network issues happen
-      setStatus('success');
+      setStatus('error');
+      setErrorMessage("Sorry, we couldn't send your request. Please call us directly.");
     }
   };
 
@@ -77,15 +88,16 @@ export default function LeadForm({ sourcePage = 'General Website', className = '
           <CheckCircle className="w-10 h-10" />
         </div>
         <h3 className="text-emerald-950 font-extrabold text-xl md:text-2xl tracking-tight">
-          Request Received Successfully!
+          Request Received
         </h3>
-        <p className="text-emerald-800 text-sm mt-3 leading-relaxed">
-          Thank you, <strong>{formData.name}</strong>. Our local Johnson City service coordinator has received your request for <strong>{formData.serviceNeeded}</strong>.
+        <p className="text-emerald-800 font-medium text-sm md:text-base mt-3 leading-relaxed">
+          Thank you. Your request has been received. We'll be in touch shortly.
         </p>
         <div className="bg-white rounded-xl p-4 my-5 border border-emerald-100 text-left text-xs text-slate-600 flex flex-col gap-2 shadow-sm">
-          <span className="font-bold text-slate-800 text-sm block border-b border-slate-100 pb-1.5">What Happens Next?</span>
-          <p>• <strong>Within 10 Minutes:</strong> We will call you at <strong className="text-slate-900">{formData.phone}</strong> to confirm your address and schedule details.</p>
-          <p>• <strong>Technician Dispatch:</strong> A certified technician will be assigned to your service run in {formData.city || 'your area'}.</p>
+          <span className="font-bold text-slate-800 text-sm block border-b border-slate-100 pb-1.5">Request Summary</span>
+          <p>• <strong>Name:</strong> {formData.name}</p>
+          <p>• <strong>Phone:</strong> {formData.phone}</p>
+          <p>• <strong>Service:</strong> {formData.serviceNeeded} ({formData.city})</p>
         </div>
         <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
           <a
