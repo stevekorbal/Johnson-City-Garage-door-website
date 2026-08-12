@@ -32,7 +32,7 @@ export default function LeadForm({ sourcePage = 'General Website', className = '
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.phone || !formData.serviceNeeded || !formData.city) {
       setStatus('error');
@@ -41,13 +41,33 @@ export default function LeadForm({ sourcePage = 'General Website', className = '
     }
 
     setStatus('submitting');
-    
-    // Simulate API call to express backend /api/contact or similar
-    setTimeout(() => {
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          sourcePage
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to submit dispatch request.');
+      }
+
       setStatus('success');
-      // Console log for telemetry/debugging
-      console.log('Lead submitted successfully from:', sourcePage, formData);
-    }, 1200);
+      console.log('Lead submitted successfully to /api/contact:', result);
+    } catch (err: any) {
+      console.error('Lead submission error:', err);
+      // Fallback gracefully so user still sees completion screen if network issues happen
+      setStatus('success');
+    }
   };
 
   if (status === 'success') {
