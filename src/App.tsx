@@ -127,7 +127,7 @@ export default function App() {
           '@type': 'LocalBusiness',
           'name': 'Tri-Cities Garage Door Repair',
           'telephone': '+14236721770',
-          'email': 'contact@garagedoorrepairjohnsoncity.com',
+          'email': 'contact@garagedoorrepairjohnsoncity.co',
           'priceRange': '$$',
           'image': 'https://tricitiesgaragedoor.com/src/assets/images/garage_door_hero_1784628372796.jpg',
           'address': {
@@ -183,7 +183,7 @@ export default function App() {
           'name': `Tri-Cities Garage Door Repair - ${city.cityName}`,
           'description': city.intro,
           'telephone': '+14236721770',
-          'email': 'contact@garagedoorrepairjohnsoncity.com',
+          'email': 'contact@garagedoorrepairjohnsoncity.co',
           'priceRange': '$$',
           'url': canonicalUrl,
           'address': {
@@ -280,7 +280,7 @@ export default function App() {
         '@id': 'https://tricitiesgaragedoor.com/',
         'url': 'https://tricitiesgaragedoor.com/',
         'telephone': '+14236721770',
-        'email': 'contact@garagedoorrepairjohnsoncity.com',
+        'email': 'contact@garagedoorrepairjohnsoncity.co',
         'priceRange': '$$',
         'address': {
           '@type': 'PostalAddress',
