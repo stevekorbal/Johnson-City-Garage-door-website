@@ -54,15 +54,15 @@ export default function Footer({ onNavigate }: FooterProps) {
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-2 cursor-pointer" onClick={() => handleLinkClick('home')}>
             <div className="bg-blue-900 text-white p-2 rounded-lg">
-              <span className="font-extrabold text-sm tracking-tight block">TC</span>
+              <span className="font-extrabold text-sm tracking-tight block">JC</span>
             </div>
             <div>
-              <h4 className="font-extrabold text-sm tracking-tight text-white leading-none">TRI-CITIES</h4>
+              <h4 className="font-extrabold text-sm tracking-tight text-white leading-none">JOHNSON CITY</h4>
               <span className="text-[9px] font-bold tracking-widest text-blue-400 block mt-0.5 uppercase">GARAGE DOOR</span>
             </div>
           </div>
           <p className="text-xs leading-relaxed text-slate-400">
-            Tri-Cities Garage Door Repair is Johnson City\'s premier provider of professional residential and commercial overhead door repair, installation, and spring replacement. We operate 24/7 to keep our community safe and secure.
+            Johnson City Garage Door Repair is Johnson City's premier provider of professional residential and commercial overhead door repair, installation, and spring replacement. We operate 24/7 to keep our community safe and secure.
           </p>
           <div className="flex flex-col gap-2 mt-2">
             <span className="text-xs text-white font-semibold uppercase tracking-wider block">Authorized Installer of:</span>

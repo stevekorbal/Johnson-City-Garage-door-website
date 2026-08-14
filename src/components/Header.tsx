@@ -47,7 +47,7 @@ export default function Header({ currentPath, onNavigate }: HeaderProps) {
           <span className="hidden sm:inline-block text-slate-400">|</span>
           <span className="hidden sm:flex items-center gap-1.5 text-slate-300">
             <MapPin className="w-4 h-4 text-slate-400" />
-            Johnson City, TN & Tri-Cities Area
+            Johnson City, TN & Surrounding Areas
           </span>
         </div>
         <div className="flex items-center gap-4 ml-auto">
@@ -79,11 +79,11 @@ export default function Header({ currentPath, onNavigate }: HeaderProps) {
             className="flex items-center gap-2 cursor-pointer group"
           >
             <div className="bg-blue-900 text-white p-2 rounded-lg group-hover:bg-blue-800 transition-colors shadow-inner">
-              <span className="font-extrabold text-lg md:text-xl tracking-tight block">TC</span>
+              <span className="font-extrabold text-lg md:text-xl tracking-tight block">JC</span>
             </div>
             <div>
               <h1 className="font-extrabold text-base md:text-lg tracking-tight text-slate-900 leading-none">
-                TRI-CITIES
+                JOHNSON CITY
               </h1>
               <span className="text-[10px] md:text-xs font-bold tracking-widest text-blue-900 block mt-0.5">
                 GARAGE DOOR REPAIR
