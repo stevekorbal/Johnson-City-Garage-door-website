@@ -16,56 +16,130 @@ export default function LeadForm({ sourcePage = 'General Website', className = '
     city: '',
     serviceNeeded: '',
     message: '',
-    agreedToTerms: true
+    agreedToTerms: true,
+    website_hp: '', // Honeypot anti-spam field
   });
 
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     const { name, value, type } = e.target;
     if (type === 'checkbox') {
       const checked = (e.target as HTMLInputElement).checked;
-      setFormData(prev => ({ ...prev, [name]: checked }));
+      setFormData((prev) => ({ ...prev, [name]: checked }));
     } else {
-      setFormData(prev => ({ ...prev, [name]: value }));
+      setFormData((prev) => ({ ...prev, [name]: value }));
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.phone || !formData.serviceNeeded || !formData.city) {
+
+    // Prevent duplicate submissions
+    if (status === 'submitting') {
+      return;
+    }
+
+    if (!formData.name.trim() || !formData.phone.trim() || !formData.serviceNeeded || !formData.city) {
       setStatus('error');
       setErrorMessage('Please fill in all required fields (Name, Phone, City, Service).');
       return;
     }
 
+    // Basic email format check if email is provided
+    if (formData.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
+      setStatus('error');
+      setErrorMessage('Please enter a valid email address.');
+      return;
+    }
+
     setStatus('submitting');
-    
-    // Simulate API call to express backend /api/contact or similar
-    setTimeout(() => {
-      setStatus('success');
-      // Console log for telemetry/debugging
-      console.log('Lead submitted successfully from:', sourcePage, formData);
-    }, 1200);
+    setErrorMessage('');
+
+    try {
+      const payload = {
+        name: formData.name.trim(),
+        phone: formData.phone.trim(),
+        email: formData.email.trim(),
+        city: formData.city,
+        service: formData.serviceNeeded,
+        message: formData.message.trim(),
+        website_hp: formData.website_hp,
+      };
+
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const contentType = response.headers.get('content-type') || '';
+      let data: any = null;
+
+      if (contentType.includes('application/json')) {
+        try {
+          data = await response.json();
+        } catch {
+          data = null;
+        }
+      }
+
+      if (response.ok && data && data.success) {
+        setStatus('success');
+        setSuccessMessage(
+          data.message ||
+            "Thank you. Your request has been received. We'll be in touch shortly."
+        );
+      } else {
+        setStatus('error');
+        const defaultError = "Sorry, we couldn't send your request. Please call us directly.";
+        setErrorMessage(data?.error || defaultError);
+      }
+    } catch (err) {
+      console.error('[LeadForm Submission Error]:', err);
+      setStatus('error');
+      setErrorMessage("Sorry, we couldn't send your request. Please call us directly.");
+    }
   };
 
   if (status === 'success') {
     return (
-      <div className={`bg-emerald-50 border border-emerald-200 rounded-2xl p-6 md:p-8 text-center shadow-md animate-fadeIn ${className}`}>
+      <div
+        className={`bg-emerald-50 border border-emerald-200 rounded-2xl p-6 md:p-8 text-center shadow-md animate-fadeIn ${className}`}
+      >
         <div className="bg-emerald-100 text-emerald-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 border border-emerald-200">
           <CheckCircle className="w-10 h-10" />
         </div>
         <h3 className="text-emerald-950 font-extrabold text-xl md:text-2xl tracking-tight">
           Request Received Successfully!
         </h3>
-        <p className="text-emerald-800 text-sm mt-3 leading-relaxed">
-          Thank you, <strong>{formData.name}</strong>. Our local Johnson City service coordinator has received your request for <strong>{formData.serviceNeeded}</strong>.
+        <p className="text-emerald-900 font-bold text-sm md:text-base mt-3 leading-relaxed">
+          {successMessage ||
+            "Thank you. Your request has been received. We'll be in touch shortly."}
         </p>
         <div className="bg-white rounded-xl p-4 my-5 border border-emerald-100 text-left text-xs text-slate-600 flex flex-col gap-2 shadow-sm">
-          <span className="font-bold text-slate-800 text-sm block border-b border-slate-100 pb-1.5">What Happens Next?</span>
-          <p>• <strong>Within 10 Minutes:</strong> We will call you at <strong className="text-slate-900">{formData.phone}</strong> to confirm your address and schedule details.</p>
-          <p>• <strong>Technician Dispatch:</strong> A certified technician will be assigned to your service run in {formData.city || 'your area'}.</p>
+          <span className="font-bold text-slate-800 text-sm block border-b border-slate-100 pb-1.5">
+            Confirmation Details
+          </span>
+          <p>
+            • <strong>Customer:</strong> {formData.name}
+          </p>
+          <p>
+            • <strong>Phone:</strong> {formData.phone}
+          </p>
+          <p>
+            • <strong>Service:</strong> {formData.serviceNeeded} ({formData.city || 'Johnson City'})
+          </p>
+          <p>
+            • <strong>Response Window:</strong> Our local Johnson City coordinator will contact you shortly to confirm your service appointment.
+          </p>
         </div>
         <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
           <a
@@ -73,7 +147,7 @@ export default function LeadForm({ sourcePage = 'General Website', className = '
             className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-6 rounded-xl text-sm shadow transition-all flex items-center justify-center gap-2"
           >
             <PhoneCall className="w-4 h-4 fill-current" />
-            Call Emergency Line Now
+            Call Emergency Dispatch: (423) 672-1770
           </a>
         </div>
       </div>
@@ -89,10 +163,37 @@ export default function LeadForm({ sourcePage = 'General Website', className = '
       </div>
 
       <form onSubmit={handleSubmit} className="p-6 flex flex-col gap-4">
+        {/* Hidden Honeypot field for bot protection */}
+        <input
+          type="text"
+          name="website_hp"
+          value={formData.website_hp}
+          onChange={handleChange}
+          tabIndex={-1}
+          autoComplete="off"
+          style={{
+            position: 'absolute',
+            opacity: 0,
+            zIndex: -1,
+            pointerEvents: 'none',
+            height: 0,
+            width: 0,
+          }}
+          aria-hidden="true"
+        />
+
         {status === 'error' && (
           <div className="bg-red-50 border border-red-200 text-red-800 rounded-lg p-3 text-xs flex items-start gap-2">
             <AlertCircle className="w-4 h-4 shrink-0 text-red-600 mt-0.5" />
-            <span>{errorMessage}</span>
+            <div className="flex-1">
+              <span className="font-bold block">{errorMessage}</span>
+              <span className="text-[11px] text-red-700 mt-0.5 block">
+                Emergency Dispatch:{' '}
+                <a href="tel:4236721770" className="underline font-bold">
+                  (423) 672-1770
+                </a>
+              </span>
+            </div>
           </div>
         )}
 
@@ -109,7 +210,8 @@ export default function LeadForm({ sourcePage = 'General Website', className = '
             value={formData.name}
             onChange={handleChange}
             placeholder="John Doe"
-            className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-900 focus:bg-white transition-all"
+            disabled={status === 'submitting'}
+            className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-900 focus:bg-white transition-all disabled:opacity-60"
           />
         </div>
 
@@ -127,7 +229,8 @@ export default function LeadForm({ sourcePage = 'General Website', className = '
               value={formData.phone}
               onChange={handleChange}
               placeholder="(423) 672-1770"
-              className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-900 focus:bg-white transition-all"
+              disabled={status === 'submitting'}
+              className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-900 focus:bg-white transition-all disabled:opacity-60"
             />
           </div>
           <div>
@@ -141,7 +244,8 @@ export default function LeadForm({ sourcePage = 'General Website', className = '
               value={formData.email}
               onChange={handleChange}
               placeholder="john@example.com"
-              className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-900 focus:bg-white transition-all"
+              disabled={status === 'submitting'}
+              className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-900 focus:bg-white transition-all disabled:opacity-60"
             />
           </div>
         </div>
@@ -158,11 +262,12 @@ export default function LeadForm({ sourcePage = 'General Website', className = '
               required
               value={formData.city}
               onChange={handleChange}
-              className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-800 focus:outline-none focus:border-blue-900 focus:bg-white transition-all"
+              disabled={status === 'submitting'}
+              className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-800 focus:outline-none focus:border-blue-900 focus:bg-white transition-all disabled:opacity-60"
             >
               <option value="">Select Location</option>
               <option value="Johnson City, TN">Johnson City, TN</option>
-              {Object.values(citiesData).map(city => (
+              {Object.values(citiesData).map((city) => (
                 <option key={city.id} value={city.cityName}>
                   {city.cityName}
                 </option>
@@ -179,10 +284,11 @@ export default function LeadForm({ sourcePage = 'General Website', className = '
               required
               value={formData.serviceNeeded}
               onChange={handleChange}
-              className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-800 focus:outline-none focus:border-blue-900 focus:bg-white transition-all"
+              disabled={status === 'submitting'}
+              className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-800 focus:outline-none focus:border-blue-900 focus:bg-white transition-all disabled:opacity-60"
             >
               <option value="">Select Service</option>
-              {Object.values(servicesData).map(service => (
+              {Object.values(servicesData).map((service) => (
                 <option key={service.id} value={service.title.split('|')[0].trim()}>
                   {service.title.split('|')[0].trim()}
                 </option>
@@ -202,8 +308,9 @@ export default function LeadForm({ sourcePage = 'General Website', className = '
             rows={3}
             value={formData.message}
             onChange={handleChange}
+            disabled={status === 'submitting'}
             placeholder="e.g. My garage door spring snapped this morning, need help ASAP."
-            className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-900 focus:bg-white transition-all resize-none"
+            className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-900 focus:bg-white transition-all resize-none disabled:opacity-60"
           ></textarea>
         </div>
 
@@ -215,6 +322,7 @@ export default function LeadForm({ sourcePage = 'General Website', className = '
             name="agreedToTerms"
             checked={formData.agreedToTerms}
             onChange={handleChange}
+            disabled={status === 'submitting'}
             className="mt-1 h-4 w-4 text-blue-900 border-slate-300 rounded focus:ring-blue-900"
           />
           <label htmlFor="agreedToTerms" className="text-[10px] md:text-xs text-slate-500 leading-tight">
