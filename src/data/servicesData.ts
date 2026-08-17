@@ -242,7 +242,7 @@ export const servicesData: Record<string, ServicePage> = {
     id: 'emergency-garage-door-repair',
     title: 'Emergency Garage Door Repair in Johnson City, TN',
     metaTitle: 'Emergency Garage Door Repair Johnson City TN | 24/7 Service',
-    metaDescription: 'Stuck garage door? Tri-Cities fast 24/7 emergency repair response team is here in Johnson City, TN. We fix broken springs, off-track doors, and opener issues.',
+    metaDescription: 'Stuck garage door? Fast 24/7 emergency repair response team is here in Johnson City, TN. We fix broken springs, off-track doors, and opener issues.',
     shortDesc: 'Locked out or stuck open? Our 24/7 emergency dispatch team is ready to restore your home\'s safety and security with fast, on-site diagnostics.',
     imageAlt: 'Emergency responder technician repairing an off-track garage door under headlights in Johnson City, TN',
     intro: 'Garage door problems don\'t always happen during business hours. A broken spring, damaged cable, or garage door stuck open can leave your home vulnerable and prevent you from using your garage safely.\n\nOur emergency repair service is designed to help homeowners quickly restore safe operation.',

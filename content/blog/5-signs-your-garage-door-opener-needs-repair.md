@@ -5,7 +5,7 @@ slug: "5-signs-your-garage-door-opener-needs-repair"
 date: "2026-07-20"
 updatedDate: "2026-07-28"
 author: "Johnson City Garage Door Team"
-featuredImage: "/images/garage-door-wont-open-johnson-city-tn.webp"
+featuredImage: "/assets/images/garage-door-opener-repair.png"
 featuredImageAlt: "Garage door opener unit mounted on ceiling with wall button control"
 primaryKeyword: "garage door opener repair johnson city tn"
 category: "Maintenance Tips"
@@ -58,6 +58,6 @@ If you press your remote and hear the motor humming inside the ceiling unit, but
 
 ## Fast Local Opener Repair & Upgrades
 
-If your garage door opener is showing any of these symptoms, don't wait for total breakdown. **Tri-Cities Garage Door Repair** services all major brands including LiftMaster, Chamberlain, Genie, and Craftsman.
+If your garage door opener is showing any of these symptoms, don't wait for total breakdown. **Johnson City Garage Door Repair** services all major brands including LiftMaster, Chamberlain, Genie, and Craftsman.
 
 Contact our Johnson City technicians today at **[(423) 672-1770](tel:4236721770)** for fast diagnostic and repair services!

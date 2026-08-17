@@ -49,7 +49,7 @@ export default function BlogPostView({ slug, onNavigate }: BlogPostViewProps) {
     { title: 'Garage Door Spring Repair', path: 'garage-door-spring-repair', desc: 'Broken spring replacement & tension balancing' },
     { title: 'Garage Door Opener Repair', path: 'garage-door-opener-repair', desc: 'LiftMaster, Genie & Chamberlain motor fix' },
     { title: 'New Door Installation', path: 'garage-door-installation', desc: 'C.H.I. & Amarr insulated steel doors' },
-    { title: 'Emergency Repair Service', path: 'emergency-garage-door-repair', desc: '24/7 immediate dispatch in Tri-Cities' },
+    { title: 'Emergency Repair Service', path: 'emergency-garage-door-repair', desc: '24/7 immediate dispatch in Johnson City' },
   ];
 
   return (
@@ -209,7 +209,7 @@ export default function BlogPostView({ slug, onNavigate }: BlogPostViewProps) {
                   <ShieldCheck className="w-4 h-4" />
                   Local Service Dispatch
                 </div>
-                <h3 className="text-lg font-black text-white">Tri-Cities Garage Door</h3>
+                <h3 className="text-lg font-black text-white">Johnson City Garage Door</h3>
                 <p className="text-slate-300 text-xs mt-2 leading-relaxed">
                   Serving Johnson City, Kingsport, Bristol, Elizabethton, and surrounding areas with 24/7 same-day service.
                 </p>

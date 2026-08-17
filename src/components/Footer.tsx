@@ -171,7 +171,7 @@ export default function Footer({ onNavigate }: FooterProps) {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
           <div>
             <p className="text-slate-500">
-              &copy; {new Date().getFullYear()} Tri-Cities Garage Door Repair. All Rights Reserved.
+              &copy; {new Date().getFullYear()} Johnson City Garage Door Repair. All Rights Reserved.
             </p>
             <p className="text-[10px] text-slate-600 mt-1">
               Serving Johnson City, Kingsport, Bristol, Elizabethton, Jonesborough, Erwin, Piney Flats, and Gray, TN. Testimonials and company stories are sample representations to show our capabilities.

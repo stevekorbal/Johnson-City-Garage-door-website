@@ -87,7 +87,7 @@ export default function App() {
   useEffect(() => {
     // 1. Determine Title & Description based on currentPath
     let title = 'Garage Door Repair Johnson City TN | Same-Day Service';
-    let description = 'Premium, fast-loading garage door repair, spring replacement, opener installation, and 24/7 emergency services in Johnson City, TN and surrounding Tri-Cities areas.';
+    let description = 'Premium, fast-loading garage door repair, spring replacement, opener installation, and 24/7 emergency services in Johnson City, TN and surrounding areas.';
     let schemaJson: any = null;
 
     const envDomain = import.meta.env.VITE_SITE_URL || import.meta.env.VITE_DOMAIN;
@@ -125,11 +125,11 @@ export default function App() {
         'description': service.shortDesc,
         'provider': {
           '@type': 'LocalBusiness',
-          'name': 'Tri-Cities Garage Door Repair',
+          'name': 'Johnson City Garage Door Repair',
           'telephone': '+14236721770',
           'email': 'contact@garagedoorrepairjohnsoncity.co',
           'priceRange': '$$',
-          'image': 'https://tricitiesgaragedoor.com/src/assets/images/garage_door_hero_1784628372796.jpg',
+          'image': 'https://garagedoorrepairjohnsoncity.com/src/assets/images/garage_door_hero_1784628372796.jpg',
           'address': {
             '@type': 'PostalAddress',
             'streetAddress': '120 W Spring St',
@@ -180,7 +180,7 @@ export default function App() {
         schemaJson = {
           '@context': 'https://schema.org',
           '@type': 'LocalBusiness',
-          'name': `Tri-Cities Garage Door Repair - ${city.cityName}`,
+          'name': `Johnson City Garage Door Repair - ${city.cityName}`,
           'description': city.intro,
           'telephone': '+14236721770',
           'email': 'contact@garagedoorrepairjohnsoncity.co',
@@ -198,7 +198,7 @@ export default function App() {
       const slug = currentPath.replace(/^blog\//, '');
       const post = getPostBySlug(slug);
       if (post) {
-        title = `${post.title} | Tri-Cities Garage Door Repair`;
+        title = `${post.title} | Johnson City Garage Door Repair`;
         description = post.description;
 
         schemaJson = {
@@ -219,7 +219,7 @@ export default function App() {
           },
           'publisher': {
             '@type': 'Organization',
-            'name': 'Tri-Cities Garage Door Repair',
+            'name': 'Johnson City Garage Door Repair',
             'logo': {
               '@type': 'ImageObject',
               'url': `${baseDomain}/assets/images/garage-door-repair.png`
@@ -234,19 +234,19 @@ export default function App() {
     } else {
       switch (currentPath) {
         case 'blog':
-          title = 'Blog & Repair Guides | Tri-Cities Garage Door Repair';
-          description = 'Expert garage door repair guides, spring replacement cost breakdowns, and opener troubleshooting tips for Johnson City, TN and Tri-Cities homeowners.';
+          title = 'Blog & Repair Guides | Johnson City Garage Door Repair';
+          description = 'Expert garage door repair guides, spring replacement cost breakdowns, and opener troubleshooting tips for Johnson City, TN and surrounding homeowners.';
           break;
         case 'about':
-          title = 'About Us | Tri-Cities Garage Door Repair Johnson City TN';
-          description = 'Learn about Tri-Cities Garage Door Repair in Johnson City, TN. Licensed, bonded, and insured local overhead door specialists.';
+          title = 'About Us | Johnson City Garage Door Repair Johnson City TN';
+          description = 'Learn about Johnson City Garage Door Repair in Johnson City, TN. Licensed, bonded, and insured local overhead door specialists.';
           break;
         case 'why-choose-us':
-          title = 'Why Choose Us | Tri-Cities Garage Door Repair Johnson City TN';
+          title = 'Why Choose Us | Johnson City Garage Door Repair Johnson City TN';
           description = 'Discover why homeowners and businesses in Johnson City, TN trust us for their garage door repairs and installations. Same-day service, clear warranties.';
           break;
         case 'service-areas':
-          title = 'Service Areas | Garage Door Repair in Tri-Cities TN';
+          title = 'Service Areas | Garage Door Repair in Johnson City TN';
           description = 'We proudly serve Johnson City, Kingsport, Bristol, Elizabethton, Jonesborough, Erwin, Piney Flats, Gray, and surrounding East Tennessee communities.';
           break;
         case 'faqs':
@@ -254,20 +254,20 @@ export default function App() {
           description = 'Got questions about broken springs, opener issues, or new door installations? Check out our helpful FAQs or call today for immediate help.';
           break;
         case 'contact':
-          title = 'Contact Us | Tri-Cities Garage Door Repair Johnson City TN';
+          title = 'Contact Us | Johnson City Garage Door Repair Johnson City TN';
           description = 'Get in touch with our local team for emergency repairs or free estimates in Johnson City, TN. We\'re available 24/7 at (423) 672-1770.';
           break;
         case 'privacy-policy':
-          title = 'Privacy Policy | Tri-Cities Garage Door Repair';
+          title = 'Privacy Policy | Johnson City Garage Door Repair';
           description = 'Read our privacy policy to understand how we protect your information when you contact us for garage door services.';
           break;
         case 'terms-and-conditions':
-          title = 'Terms & Conditions | Tri-Cities Garage Door Repair';
+          title = 'Terms & Conditions | Johnson City Garage Door Repair';
           description = 'Review our service terms and conditions for residential and commercial garage door services.';
           break;
         default:
           title = 'Garage Door Repair Johnson City TN | Same-Day Service';
-          description = 'Premium, fast-loading garage door repair, spring replacement, opener installation, and 24/7 emergency services in Johnson City, TN and surrounding Tri-Cities areas.';
+          description = 'Premium, fast-loading garage door repair, spring replacement, opener installation, and 24/7 emergency services in Johnson City, TN and surrounding areas.';
           break;
       }
 
@@ -275,10 +275,10 @@ export default function App() {
       schemaJson = {
         '@context': 'https://schema.org',
         '@type': 'LocalBusiness',
-        'name': 'Tri-Cities Garage Door Repair',
-        'image': 'https://tricitiesgaragedoor.com/src/assets/images/garage_door_hero_1784628372796.jpg',
-        '@id': 'https://tricitiesgaragedoor.com/',
-        'url': 'https://tricitiesgaragedoor.com/',
+        'name': 'Johnson City Garage Door Repair',
+        'image': 'https://garagedoorrepairjohnsoncity.com/src/assets/images/garage_door_hero_1784628372796.jpg',
+        '@id': 'https://garagedoorrepairjohnsoncity.com/',
+        'url': 'https://garagedoorrepairjohnsoncity.com/',
         'telephone': '+14236721770',
         'email': 'contact@garagedoorrepairjohnsoncity.co',
         'priceRange': '$$',

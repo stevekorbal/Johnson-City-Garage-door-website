@@ -19,7 +19,7 @@ export default function AboutView({ onNavigate }: { onNavigate: (path: string) =
             Our Company Backstory
           </span>
           <h1 className="text-3xl md:text-5xl font-black tracking-tight">
-            About Tri-Cities Garage Door Repair
+            About Johnson City Garage Door Repair
           </h1>
           <p className="text-slate-300 text-xs md:text-sm leading-relaxed max-w-2xl mx-auto mt-4">
             A locally owned, community-first garage door company serving Johnson City, TN, and surrounding regions with unmatched workmanship, safety, and upfront integrity.
@@ -36,7 +36,7 @@ export default function AboutView({ onNavigate }: { onNavigate: (path: string) =
             Our Humble Roots & Mission
           </h2>
           <p className="text-slate-600 text-xs md:text-sm leading-relaxed mt-2">
-            Tri-Cities Garage Door Repair was founded right here in Johnson City, Tennessee, with a simple, unwavering mission: to provide our neighbors with a reliable, safe, and honest garage door service they can call on day or night. We noticed that local homeowners and businesses were often subjected to high-pressure sales tactics or delayed emergency dispatch support from national call-center franchises.
+            Johnson City Garage Door Repair was founded right here in Johnson City, Tennessee, with a simple, unwavering mission: to provide our neighbors with a reliable, safe, and honest garage door service they can call on day or night. We noticed that local homeowners and businesses were often subjected to high-pressure sales tactics or delayed emergency dispatch support from national call-center franchises.
           </p>
           <p className="text-slate-600 text-xs md:text-sm leading-relaxed">
             We decided to change that. By focusing strictly on hiring background-checked, drug-screened local technicians and stocking our service vehicles with high-cycle, heavy-duty replacement hardware (like oil-tempered galvanized torsion springs and high-cycle nylon rollers), we ensure that over 90% of our garage door repairs are successfully executed on the very first visit.
@@ -76,7 +76,7 @@ export default function AboutView({ onNavigate }: { onNavigate: (path: string) =
             <div>
               <h3 className="font-extrabold text-slate-900 text-sm md:text-base">Community Dedication</h3>
               <p className="text-slate-500 text-xs mt-1.5 leading-relaxed">
-                We live and work in the Tri-Cities area. We proudly support local charity events, community high school sports, and youth associations.
+                We live and work in the Johnson City area. We proudly support local charity events, community high school sports, and youth associations.
               </p>
             </div>
           </div>
@@ -101,7 +101,7 @@ export default function AboutView({ onNavigate }: { onNavigate: (path: string) =
             Since our founding, we have repaired thousands of doors in Johnson City, Kingsport, and Bristol. We have stayed small enough to maintain personal, friendly communication with every single homeowner, yet large enough to possess the heavy-duty machinery, crane lifters, and industrial jackshaft inventory necessary for complex commercial loading dock services.
           </p>
           <p className="text-slate-600 text-xs md:text-sm leading-relaxed mt-3">
-            We are fully licensed, bonded, and carry extensive liability and workman\'s compensation insurance to protect your property during repair or installation operations. When you choose Tri-Cities Garage Door Repair, you are choosing a solid, local business that stands behind its work with real, bulletproof warranties.
+            We are fully licensed, bonded, and carry extensive liability and workman's compensation insurance to protect your property during repair or installation operations. When you choose Johnson City Garage Door Repair, you are choosing a solid, local business that stands behind its work with real, bulletproof warranties.
           </p>
         </div>
 

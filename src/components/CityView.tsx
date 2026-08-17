@@ -70,7 +70,7 @@ export default function CityView({ cityId, onNavigate }: CityViewProps) {
               Your Trusted Local Garage Door Company
             </h2>
             <p className="text-slate-600 text-sm md:text-base mt-4 leading-relaxed">
-              At Tri-Cities Garage Door Repair, we are committed to providing the absolute highest standard of workmanship for our clients in {city.cityName}. Whether you are experiencing snapped torsion springs or require a modern high-security smart opener, our local technician teams are dispatched with fully loaded vehicles to resolve your overhead door problems in a single trip.
+              At Johnson City Garage Door Repair, we are committed to providing the absolute highest standard of workmanship for our clients in {city.cityName}. Whether you are experiencing snapped torsion springs or require a modern high-security smart opener, our local technician teams are dispatched with fully loaded vehicles to resolve your overhead door problems in a single trip.
             </p>
             <p className="text-slate-600 text-sm md:text-base mt-4 leading-relaxed">
               We focus on executing highly precise repairs and carry top-rated parts backed by exceptional structural warranties. If you need immediate assistance, explore our localized solutions below or check out our primary{' '}

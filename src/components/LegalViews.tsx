@@ -35,7 +35,7 @@ export default function LegalViews({ type, onNavigate }: LegalViewsProps) {
             <>
               <h2 className="text-lg font-extrabold text-slate-900 border-b border-slate-100 pb-2">1. Overview</h2>
               <p>
-                At Tri-Cities Garage Door Repair, we value your privacy and trust. This Privacy Policy describes how we collect, use, process, and safeguard your personal information when you visit our website or submit inquiries through our online contact or request forms.
+                At Johnson City Garage Door Repair, we value your privacy and trust. This Privacy Policy describes how we collect, use, process, and safeguard your personal information when you visit our website or submit inquiries through our online contact or request forms.
               </p>
 
               <h2 className="text-lg font-extrabold text-slate-900 border-b border-slate-100 pb-2">2. Information Collection</h2>
@@ -73,7 +73,7 @@ export default function LegalViews({ type, onNavigate }: LegalViewsProps) {
             <>
               <h2 className="text-lg font-extrabold text-slate-900 border-b border-slate-100 pb-2">1. Acceptance of Terms</h2>
               <p>
-                By accessing this website, submitting request forms, or booking services with Tri-Cities Garage Door Repair, you agree to be bound by these Terms & Conditions and all applicable state laws and regulations in Tennessee.
+                By accessing this website, submitting request forms, or booking services with Johnson City Garage Door Repair, you agree to be bound by these Terms & Conditions and all applicable state laws and regulations in Tennessee.
               </p>
 
               <h2 className="text-lg font-extrabold text-slate-900 border-b border-slate-100 pb-2">2. Service Estimates & Scheduling</h2>
@@ -93,7 +93,7 @@ export default function LegalViews({ type, onNavigate }: LegalViewsProps) {
 
               <h2 className="text-lg font-extrabold text-slate-900 border-b border-slate-100 pb-2">5. Limitation of Liability</h2>
               <p>
-                Our technicians take great care to inspect wood framing and header structural integrity before adjusting springs. However, Tri-Cities Garage Door Repair is not responsible for pre-existing structural rot or decay in wood jambs or framing that fails to support standard operating stress.
+                Our technicians take great care to inspect wood framing and header structural integrity before adjusting springs. However, Johnson City Garage Door Repair is not responsible for pre-existing structural rot or decay in wood jambs or framing that fails to support standard operating stress.
               </p>
             </>
           )}

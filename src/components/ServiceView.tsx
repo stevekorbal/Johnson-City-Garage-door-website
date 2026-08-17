@@ -559,7 +559,7 @@ export default function ServiceView({ serviceId, onNavigate }: ServiceViewProps)
               </div>
               <div className="flex items-center gap-2 text-xs text-slate-600">
                 <span className="text-emerald-500 font-black text-sm">✔</span>
-                <span>Locally based in Tri-Cities area</span>
+                <span>Locally based in Johnson City area</span>
               </div>
             </div>
           </div>

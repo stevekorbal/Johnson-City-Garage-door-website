@@ -4,7 +4,7 @@ description: "Discover the exact cost of replacing garage door torsion and exten
 slug: "garage-door-spring-replacement-cost-johnson-city-tn"
 date: "2026-07-25"
 updatedDate: "2026-07-30"
-author: "Tri-Cities Garage Door Team"
+author: "Johnson City Garage Door Team"
 featuredImage: "/assets/images/garage-door-spring-repair.png"
 featuredImageAlt: "Garage door technician inspecting high-tension torsion springs in Johnson City, TN"
 primaryKeyword: "garage door spring replacement cost johnson city tn"
@@ -13,7 +13,7 @@ category: "Repair Guides"
 
 A broken garage door spring is one of the most sudden and frustrating home maintenance emergencies. If you heard a loud bang from your garage or your door refuses to open more than a few inches, you are likely dealing with a snapped torsion or extension spring.
 
-In Johnson City, TN, and the surrounding Tri-Cities region, home owners frequently ask: **"How much should garage door spring replacement cost?"**
+In Johnson City, TN, and the surrounding region, home owners frequently ask: **"How much should garage door spring replacement cost?"**
 
 This guide breaks down typical replacement costs, critical safety factors, and what to expect when hiring a licensed local technician.
 
@@ -65,6 +65,6 @@ Professional technicians use calibrated winding bars, winding cones, and vice gr
 
 ## Need Immediate Spring Repair in Johnson City?
 
-At **Tri-Cities Garage Door Repair**, we carry commercial-grade oil-tempered torsion and extension springs on all our service trucks. We offer same-day dispatch and upfront, transparent pricing across Johnson City, Kingsport, Bristol, and surrounding communities.
+At **Johnson City Garage Door Repair**, we carry commercial-grade oil-tempered torsion and extension springs on all our service trucks. We offer same-day dispatch and upfront, transparent pricing across Johnson City, Kingsport, Bristol, and surrounding communities.
 
 Call us today at **[(423) 672-1770](tel:4236721770)** or request a free estimate online!

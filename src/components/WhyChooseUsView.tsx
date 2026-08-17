@@ -37,7 +37,7 @@ export default function WhyChooseUsView({ onNavigate }: { onNavigate: (path: str
             Our Vetted Vows of Quality
           </h3>
           <p className="text-slate-600 text-xs md:text-sm leading-relaxed mt-4">
-            At Tri-Cities Garage Door Repair, we believe in long-term relationships with our clients in Johnson City, Kingsport, and Bristol. This starts by refusing to install cheap, low-cycle parts that break down shortly after service calls. We only use high-tensile aircraft steel cables, oil-tempered springs rated for 15,000+ cycles, and nylon ball-bearing rollers designed to run smoothly and quietly for decades.
+            At Johnson City Garage Door Repair, we believe in long-term relationships with our clients in Johnson City, Kingsport, and Bristol. This starts by refusing to install cheap, low-cycle parts that break down shortly after service calls. We only use high-tensile aircraft steel cables, oil-tempered springs rated for 15,000+ cycles, and nylon ball-bearing rollers designed to run smoothly and quietly for decades.
           </p>
           <p className="text-slate-600 text-xs md:text-sm leading-relaxed mt-4">
             Furthermore, our technician recruitment process is among the most rigorous in Tennessee. Every applicant undergoes professional background checks, drug testing, and completes multi-week classroom and field safety modules, ensuring you only receive courteous, certified professionals at your door.
@@ -47,7 +47,7 @@ export default function WhyChooseUsView({ onNavigate }: { onNavigate: (path: str
         {/* Closing Action Banner */}
         <div className="bg-blue-900 text-white rounded-3xl p-8 flex flex-col sm:flex-row justify-between items-center gap-6 shadow-md">
           <div className="text-left">
-            <h3 className="font-extrabold text-lg">Experience the Tri-Cities Difference Today</h3>
+            <h3 className="font-extrabold text-lg">Experience the Johnson City Difference Today</h3>
             <p className="text-blue-200 text-xs md:text-sm mt-1 leading-relaxed">
               We provide free estimates for all new door replacements and same-day dispatch on repairs.
             </p>

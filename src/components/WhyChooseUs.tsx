@@ -47,7 +47,7 @@ export default function WhyChooseUs() {
     },
     {
       title: 'Locally Owned & Operated',
-      desc: 'We are proudly based in the Tri-Cities area, supporting our neighbors with honest, friendly community service.',
+      desc: 'We are proudly based in the Johnson City area, supporting our neighbors with honest, friendly community service.',
       icon: ThumbsUp,
       badge: 'Johnson City Base',
     },

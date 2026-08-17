@@ -20,7 +20,7 @@ export default function ServiceAreasView({ onNavigate }: { onNavigate: (path: st
             Local Communities Served
           </span>
           <h1 className="text-3xl md:text-5xl font-black tracking-tight">
-            Our Tri-Cities Service Areas
+            Our Johnson City Service Areas
           </h1>
           <p className="text-slate-300 text-xs md:text-sm leading-relaxed max-w-2xl mx-auto mt-4">
             We proudly serve homeowners, businesses, and property managers within a 25-30 mile radius of Johnson City, TN. Our emergency dispatch fleets are stationed locally for rapid service.
@@ -52,7 +52,7 @@ export default function ServiceAreasView({ onNavigate }: { onNavigate: (path: st
                     <MapPin className="w-5 h-5 shrink-0" />
                   </div>
                   <span className="text-[10px] font-bold text-blue-900 bg-blue-50 border border-blue-100 px-2.5 py-0.5 rounded-full uppercase">
-                    Tri-Cities dispatch
+                    Local dispatch
                   </span>
                 </div>
 

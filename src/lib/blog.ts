@@ -78,7 +78,7 @@ export function getAllPosts(): BlogPost[] {
         slug: attrs.slug,
         date: attrs.date || '',
         updatedDate: attrs.updatedDate,
-        author: attrs.author || 'Tri-Cities Garage Door Team',
+        author: attrs.author || 'Johnson City Garage Door Team',
         featuredImage: attrs.featuredImage || '/assets/images/garage-door-repair.png',
         featuredImageAlt: attrs.featuredImageAlt || attrs.title,
         primaryKeyword: attrs.primaryKeyword || '',

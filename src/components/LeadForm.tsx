@@ -326,7 +326,7 @@ export default function LeadForm({ sourcePage = 'General Website', className = '
             className="mt-1 h-4 w-4 text-blue-900 border-slate-300 rounded focus:ring-blue-900"
           />
           <label htmlFor="agreedToTerms" className="text-[10px] md:text-xs text-slate-500 leading-tight">
-            I agree to receive SMS notifications or phone calls from Tri-Cities Garage Door Repair to coordinate services. Message & data rates may apply.
+            I agree to receive SMS notifications or phone calls from Johnson City Garage Door Repair to coordinate services. Message & data rates may apply.
           </label>
         </div>
 

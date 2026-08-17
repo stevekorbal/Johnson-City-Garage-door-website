@@ -27,7 +27,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       rating: 5,
       date: 'July 14, 2026',
       service: 'Torsion Spring Repair',
-      text: 'Our garage door spring snapped loud like a gunshot at 6:00 AM on a Tuesday, trapping both of our cars inside. I called Tri-Cities Garage Door Repair and their technician, Brad, arrived by 7:15 AM! He replaced both springs, balanced the door, and had us rolling in less than an hour. Exceptional same-day response and honest upfront pricing!'
+      text: 'Our garage door spring snapped loud like a gunshot at 6:00 AM on a Tuesday, trapping both of our cars inside. I called Johnson City Garage Door Repair and their technician, Brad, arrived by 7:15 AM! He replaced both springs, balanced the door, and had us rolling in less than an hour. Exceptional same-day response and honest upfront pricing!'
     },
     {
       id: '2',
@@ -123,7 +123,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           {/* Left Text Column */}
           <div className="lg:col-span-7 flex flex-col gap-6 text-left">
             <span className="inline-block text-xs md:text-sm font-black text-amber-400 uppercase tracking-widest bg-amber-950/60 px-3 py-1.5 rounded-full border border-amber-800/40 w-fit">
-              ★ Same-Day Service in Johnson City & Tri-Cities ★
+              ★ Same-Day Service in Johnson City & Surrounding Areas ★
             </span>
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight md:leading-none text-slate-100">
               Fast & Reliable Garage Door Repair in <span className="text-amber-400">Johnson City, TN</span>
@@ -299,7 +299,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               Highly Rated By Homeowners & Businesses
             </h2>
             <p className="text-slate-600 text-sm md:text-base mt-4 leading-relaxed">
-              We take immense pride in our workmanship. See what our local customers in Johnson City, Kingsport, Bristol, and the surrounding Tri-Cities are saying about our rapid service.
+              We take immense pride in our workmanship. See what our local customers in Johnson City, Kingsport, Bristol, and the surrounding areas are saying about our rapid service.
             </p>
           </div>
 

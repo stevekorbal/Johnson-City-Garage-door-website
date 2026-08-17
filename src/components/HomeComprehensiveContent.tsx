@@ -25,7 +25,7 @@ export default function HomeComprehensiveContent({ onNavigate }: HomeComprehensi
       a: 'We strongly advise against attempting to open a garage door with a broken spring manually or with the automatic opener. A broken spring eliminates the counter-balance system, making a standard 150-250 lb door feel extremely heavy. Attempting to lift it can strip opener gears, bend tracks, or cause the door to crash down dangerously.'
     },
     {
-      q: 'How fast can a technician arrive for emergency repairs in the Tri-Cities?',
+      q: 'How fast can a technician arrive for emergency repairs in Johnson City?',
       a: 'Our emergency service trucks are dispatched directly from our central location in Johnson City. For urgent situations like trapped vehicles, off-track doors, or broken springs, we guarantee arrival within 45 to 60 minutes across Johnson City, Kingsport, Bristol, Elizabethton, and Gray.'
     },
     {
@@ -273,7 +273,7 @@ export default function HomeComprehensiveContent({ onNavigate }: HomeComprehensi
                 Our Transparent Warranty & Workmanship Policy
               </h2>
               <p className="text-slate-300 text-sm md:text-base leading-relaxed">
-                When you hire Tri-Cities Garage Door Repair, you are covered by clear written warranties on both parts and labor. We stand firmly behind every spring replaced, opener installed, and cable tightened.
+                When you hire Johnson City Garage Door Repair, you are covered by clear written warranties on both parts and labor. We stand firmly behind every spring replaced, opener installed, and cable tightened.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-2">
@@ -310,7 +310,7 @@ export default function HomeComprehensiveContent({ onNavigate }: HomeComprehensi
           </div>
         </section>
 
-        {/* Section 4: Service Boundaries & Tri-Cities Area Coverage */}
+        {/* Section 4: Service Boundaries & Johnson City Area Coverage */}
         <section className="bg-white rounded-3xl p-8 md:p-12 border border-slate-200 shadow-sm">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-slate-200 pb-6 mb-8">
             <div>

@@ -55,7 +55,7 @@ export default function FaqView({ onNavigate }: { onNavigate: (path: string) => 
       id: 'f8',
       category: 'emergency',
       question: 'How fast do you respond to emergency repair calls in Johnson City?',
-      answer: 'Our local dispatch operators coordinate emergency responses in Johnson City and surrounding Tri-Cities (Kingsport, Bristol) 24/7/365. On average, we have a fully stocked service vehicle and certified technician on your property within 45 to 60 minutes of your call.'
+      answer: 'Our local dispatch operators coordinate emergency responses in Johnson City and surrounding communities (Kingsport, Bristol) 24/7/365. On average, we have a fully stocked service vehicle and certified technician on your property within 45 to 60 minutes of your call.'
     },
     {
       id: 'f9',

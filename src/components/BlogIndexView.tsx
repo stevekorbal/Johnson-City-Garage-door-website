@@ -46,7 +46,7 @@ export default function BlogIndexView({ onNavigate }: BlogIndexViewProps) {
             Garage Door Knowledge Base & Guides
           </span>
           <h1 className="text-3xl md:text-5xl font-black tracking-tight">
-            Tri-Cities Garage Door Blog
+            Johnson City Garage Door Blog
           </h1>
           <p className="text-slate-300 text-xs md:text-sm leading-relaxed max-w-2xl mx-auto mt-4">
             Expert repair guides, troubleshooting tips, cost breakdowns, and maintenance advice from Johnson City's trusted overhead door specialists.
@@ -169,7 +169,7 @@ export default function BlogIndexView({ onNavigate }: BlogIndexViewProps) {
               Need Expert Help with Your Garage Door?
             </span>
             <h3 className="text-xl md:text-3xl font-black">
-              Same-Day Garage Door Repairs in Johnson City & Tri-Cities
+              Same-Day Garage Door Repairs in Johnson City & Surrounding Areas
             </h3>
             <p className="text-slate-300 text-xs md:text-sm mt-2 max-w-xl">
               Don't let a broken spring or malfunctioning opener disrupt your day. Our certified local technicians arrive in fully equipped service vans.
