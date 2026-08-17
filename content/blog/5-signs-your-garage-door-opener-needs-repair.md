@@ -4,7 +4,7 @@ description: "Is your garage door opener making strange grinding noises or actin
 slug: "5-signs-your-garage-door-opener-needs-repair"
 date: "2026-07-20"
 updatedDate: "2026-07-28"
-author: "Tri-Cities Garage Door Team"
+author: "Johnson City Garage Door Team"
 featuredImage: "/images/garage-door-wont-open-johnson-city-tn.webp"
 featuredImageAlt: "Garage door opener unit mounted on ceiling with wall button control"
 primaryKeyword: "garage door opener repair johnson city tn"
