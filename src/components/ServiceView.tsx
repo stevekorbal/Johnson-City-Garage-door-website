@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { servicesData } from '../data/servicesData';
 import { getServiceImage } from '../data/serviceImages';
 import { ShieldCheck, PhoneCall, Check, Wrench, HelpCircle, AlertTriangle } from 'lucide-react';
@@ -354,6 +355,14 @@ export default function ServiceView({ serviceId, onNavigate }: ServiceViewProps)
 
   return (
     <div className="w-full bg-slate-50 font-sans">
+      <Helmet>
+        <title>{serviceMeta.metaTitle || `${serviceContent.title} | Johnson City Garage Door Repair`}</title>
+        <meta
+          name="description"
+          content={serviceMeta.metaDescription || serviceMeta.shortDesc}
+        />
+      </Helmet>
+
       {/* Dynamic SEO Breadcrumbs */}
       <Breadcrumbs
         paths={[

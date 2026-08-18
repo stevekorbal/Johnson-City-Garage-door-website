@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { ShieldCheck, Award, Heart, Hammer, Phone } from 'lucide-react';
 import Breadcrumbs from './Breadcrumbs';
 
@@ -10,6 +11,14 @@ export default function AboutView({ onNavigate }: { onNavigate: (path: string) =
 
   return (
     <div className="w-full bg-slate-50 font-sans">
+      <Helmet>
+        <title>About Us | Johnson City Garage Door Repair Johnson City TN</title>
+        <meta
+          name="description"
+          content="Learn about Johnson City Garage Door Repair in Johnson City, TN. Licensed, bonded, and insured local overhead door specialists dedicated to honesty & safety."
+        />
+      </Helmet>
+
       <Breadcrumbs paths={[{ label: 'About Us' }]} onNavigate={onNavigate} />
 
       {/* Hero Header */}

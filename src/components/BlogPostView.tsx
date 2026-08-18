@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import ReactMarkdown from 'react-markdown';
 import { Calendar, User, Clock, ArrowLeft, ArrowRight, Phone, ShieldCheck, Tag, CheckCircle2, Wrench } from 'lucide-react';
 import { getPostBySlug, getRelatedPosts } from '../lib/blog';
@@ -54,6 +55,14 @@ export default function BlogPostView({ slug, onNavigate }: BlogPostViewProps) {
 
   return (
     <div className="w-full bg-slate-50 font-sans min-h-screen">
+      <Helmet>
+        <title>{post.title ? `${post.title} | Johnson City Garage Door Repair` : 'Blog | Johnson City Garage Door Repair'}</title>
+        <meta
+          name="description"
+          content={post.description || 'Expert garage door repair guide and tips from Johnson City Garage Door Repair.'}
+        />
+      </Helmet>
+
       <Breadcrumbs
         paths={[
           { label: 'Blog', route: 'blog' },

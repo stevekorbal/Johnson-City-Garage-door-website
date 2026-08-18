@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import Breadcrumbs from './Breadcrumbs';
 
 interface LegalViewsProps {
@@ -11,6 +12,22 @@ export default function LegalViews({ type, onNavigate }: LegalViewsProps) {
 
   return (
     <div className="w-full bg-slate-50 font-sans">
+      <Helmet>
+        <title>
+          {isPrivacy
+            ? 'Privacy Policy | Johnson City Garage Door Repair'
+            : 'Terms & Conditions | Johnson City Garage Door Repair'}
+        </title>
+        <meta
+          name="description"
+          content={
+            isPrivacy
+              ? 'Read our privacy policy to understand how we collect and protect your information when requesting garage door services in Johnson City, TN.'
+              : 'Review our service terms, written warranties, and estimates for residential and commercial overhead garage door services.'
+          }
+        />
+      </Helmet>
+
       <Breadcrumbs
         paths={[{ label: isPrivacy ? 'Privacy Policy' : 'Terms & Conditions' }]}
         onNavigate={onNavigate}

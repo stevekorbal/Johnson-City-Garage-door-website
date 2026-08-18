@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { citiesData } from '../data/citiesData';
 import { MapPin, PhoneCall, ShieldAlert, ShieldCheck, CheckCircle, ArrowLeft } from 'lucide-react';
 import LeadForm from './LeadForm';
@@ -15,6 +16,10 @@ export default function CityView({ cityId, onNavigate }: CityViewProps) {
   if (!city) {
     return (
       <div className="max-w-7xl mx-auto px-4 py-16 text-center font-sans">
+        <Helmet>
+          <title>Location Not Found | Johnson City Garage Door Repair</title>
+          <meta name="description" content="The requested service area could not be found. View our complete service areas list in Upper East Tennessee." />
+        </Helmet>
         <h2 className="text-2xl font-bold text-slate-900">Location Not Found</h2>
         <p className="text-slate-500 mt-2">We couldn't locate the specified service region. Please return to our main service areas overview.</p>
         <button
@@ -34,6 +39,14 @@ export default function CityView({ cityId, onNavigate }: CityViewProps) {
 
   return (
     <div className="w-full bg-slate-50 font-sans">
+      <Helmet>
+        <title>{city.metaTitle || `Garage Door Repair ${city.cityName} | Same-Day Service`}</title>
+        <meta
+          name="description"
+          content={city.metaDescription || city.intro}
+        />
+      </Helmet>
+
       {/* Localized Breadcrumbs */}
       <Breadcrumbs
         paths={[

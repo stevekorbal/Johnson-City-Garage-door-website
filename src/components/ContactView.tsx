@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { MapPin, Phone, Mail, Clock, ShieldCheck, Heart } from 'lucide-react';
 import LeadForm from './LeadForm';
 import Breadcrumbs from './Breadcrumbs';
@@ -6,6 +7,14 @@ import Breadcrumbs from './Breadcrumbs';
 export default function ContactView({ onNavigate }: { onNavigate: (path: string) => void }) {
   return (
     <div className="w-full bg-slate-50 font-sans">
+      <Helmet>
+        <title>Contact Us | Johnson City Garage Door Repair | 24/7 Service</title>
+        <meta
+          name="description"
+          content="Get in touch with our local team for emergency repairs or free estimates in Johnson City, TN. We're available 24/7 at (423) 672-1770 with fast on-site dispatch."
+        />
+      </Helmet>
+
       <Breadcrumbs paths={[{ label: 'Contact Us' }]} onNavigate={onNavigate} />
 
       {/* Hero Header */}

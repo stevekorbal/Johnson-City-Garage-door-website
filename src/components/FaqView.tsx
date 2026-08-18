@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { HelpCircle, Search, Clock, ShieldCheck, Tag } from 'lucide-react';
 import { FAQItem } from '../types';
 import Breadcrumbs from './Breadcrumbs';
@@ -166,6 +167,14 @@ export default function FaqView({ onNavigate }: { onNavigate: (path: string) => 
 
   return (
     <div className="w-full bg-slate-50 font-sans">
+      <Helmet>
+        <title>Garage Door FAQs | Repair & Troubleshooting Johnson City TN</title>
+        <meta
+          name="description"
+          content="Got questions about broken springs, humming opener motors, safety sensors, or replacement costs in Johnson City, TN? Read our expert garage door FAQs."
+        />
+      </Helmet>
+
       <Breadcrumbs paths={[{ label: 'Frequently Asked Questions' }]} onNavigate={onNavigate} />
 
       {/* Intro Header */}

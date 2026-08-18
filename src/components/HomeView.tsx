@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Phone, Calendar, ShieldCheck, ArrowRight, Star, MapPin, Wrench, Flame, Settings, Hammer, Layers, AlertTriangle } from 'lucide-react';
 import LeadForm from './LeadForm';
 import ProcessSection from './ProcessSection';
@@ -105,6 +106,14 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
   return (
     <div className="w-full bg-slate-50 font-sans">
+      <Helmet>
+        <title>Garage Door Repair Johnson City TN | Same-Day Service</title>
+        <meta
+          name="description"
+          content="Premium, fast-loading garage door repair, spring replacement, opener installation, and 24/7 emergency services in Johnson City, TN and surrounding areas."
+        />
+      </Helmet>
+
       {/* High-Impact Hero Section with Embedded Form */}
       <section className="relative bg-slate-900 py-12 lg:py-20 overflow-hidden text-white min-h-[600px] flex items-center">
         {/* Generated Hero Image Background */}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { citiesData } from '../data/citiesData';
 import { MapPin, ArrowRight, ShieldCheck, PhoneCall } from 'lucide-react';
 import Breadcrumbs from './Breadcrumbs';
@@ -11,6 +12,14 @@ export default function ServiceAreasView({ onNavigate }: { onNavigate: (path: st
 
   return (
     <div className="w-full bg-slate-50 font-sans">
+      <Helmet>
+        <title>Service Areas | Garage Door Repair in Johnson City & East TN</title>
+        <meta
+          name="description"
+          content="We proudly serve Johnson City, Kingsport, Bristol, Elizabethton, Jonesborough, Erwin, Piney Flats, Gray, and surrounding East Tennessee communities with rapid dispatch."
+        />
+      </Helmet>
+
       <Breadcrumbs paths={[{ label: 'Service Areas' }]} onNavigate={onNavigate} />
 
       {/* Hero Header */}

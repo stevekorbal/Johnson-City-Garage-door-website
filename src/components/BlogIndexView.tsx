@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Calendar, User, Tag, ArrowRight, BookOpen, Search, Phone } from 'lucide-react';
 import { getAllPosts, BlogPost } from '../lib/blog';
 import Breadcrumbs from './Breadcrumbs';
@@ -36,6 +37,14 @@ export default function BlogIndexView({ onNavigate }: BlogIndexViewProps) {
 
   return (
     <div className="w-full bg-slate-50 font-sans min-h-screen">
+      <Helmet>
+        <title>Blog & Repair Guides | Johnson City Garage Door Repair</title>
+        <meta
+          name="description"
+          content="Expert garage door repair guides, spring replacement cost breakdowns, and opener troubleshooting tips for Johnson City, TN and surrounding homeowners."
+        />
+      </Helmet>
+
       <Breadcrumbs paths={[{ label: 'Blog' }]} onNavigate={onNavigate} />
 
       {/* Hero Header Banner */}

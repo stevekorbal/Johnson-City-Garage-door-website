@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import WhyChooseUs from './WhyChooseUs';
 import Breadcrumbs from './Breadcrumbs';
 
@@ -10,6 +11,14 @@ export default function WhyChooseUsView({ onNavigate }: { onNavigate: (path: str
 
   return (
     <div className="w-full bg-slate-50 font-sans">
+      <Helmet>
+        <title>Why Choose Us | Johnson City Garage Door Repair Johnson City TN</title>
+        <meta
+          name="description"
+          content="Discover why homeowners and businesses in Johnson City, TN trust us for their garage door repairs and installations. Same-day service, high-cycle parts, clear warranties."
+        />
+      </Helmet>
+
       <Breadcrumbs paths={[{ label: 'Why Choose Us' }]} onNavigate={onNavigate} />
 
       {/* Hero Header */}
