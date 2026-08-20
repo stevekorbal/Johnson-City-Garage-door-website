@@ -110,7 +110,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         <title>Garage Door Repair Johnson City TN | Same-Day Service</title>
         <meta
           name="description"
-          content="Premium, fast-loading garage door repair, spring replacement, opener installation, and 24/7 emergency services in Johnson City, TN and surrounding areas."
+          content="Need garage door repair in Johnson City, TN? Get fast service for broken springs, garage door openers, installations and emergency repairs. Call today."
         />
       </Helmet>
 
@@ -119,7 +119,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         {/* Generated Hero Image Background */}
         <div className="absolute inset-0 z-0 select-none pointer-events-none opacity-40">
           <img
-            src="/src/assets/images/garage_door_hero_1784628372796.jpg"
+            src="/images/garage-door-repair.webp"
             alt="Premium Garage Door in Johnson City TN"
             className="w-full h-full object-cover object-center scale-105 filter saturate-110"
             referrerPolicy="no-referrer"
@@ -135,7 +135,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               ★ Same-Day Service in Johnson City & Surrounding Areas ★
             </span>
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight md:leading-none text-slate-100">
-              Fast & Reliable Garage Door Repair in <span className="text-amber-400">Johnson City, TN</span>
+              Garage Door Repair Johnson City TN <span className="text-amber-400">Fast & Reliable Service</span>
             </h2>
             <p className="text-sm md:text-lg text-slate-200 leading-relaxed max-w-xl">
               Broken springs? Noisy opener? Stuck door? Get fully certified, local professionals at your door today. We specialize in fast-response repairs and premium installations.
