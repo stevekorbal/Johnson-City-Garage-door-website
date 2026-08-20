@@ -10,7 +10,20 @@ interface FooterProps {
 export default function Footer({ onNavigate }: FooterProps) {
   const handleLinkClick = (path: string) => {
     onNavigate(path);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const getLinkProps = (path: string) => {
+    const clean = path.replace(/^\/|\/$/g, '');
+    const href = clean === 'home' || clean === '' ? '/' : `/${clean}`;
+    return {
+      href,
+      onClick: (e: React.MouseEvent) => {
+        if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+          e.preventDefault();
+          handleLinkClick(clean);
+        }
+      }
+    };
   };
 
   return (
@@ -52,15 +65,15 @@ export default function Footer({ onNavigate }: FooterProps) {
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* Company Bio column */}
         <div className="flex flex-col gap-4">
-          <div className="flex items-center gap-2 cursor-pointer" onClick={() => handleLinkClick('home')}>
+          <a {...getLinkProps('home')} className="flex items-center gap-2 cursor-pointer">
             <div className="bg-blue-900 text-white p-2 rounded-lg">
               <span className="font-extrabold text-sm tracking-tight block">JC</span>
             </div>
             <div>
-              <h4 className="font-extrabold text-sm tracking-tight text-white leading-none">JOHNSON CITY</h4>
+              <span className="font-extrabold text-sm tracking-tight text-white leading-none block">JOHNSON CITY</span>
               <span className="text-[9px] font-bold tracking-widest text-blue-400 block mt-0.5 uppercase">GARAGE DOOR</span>
             </div>
-          </div>
+          </a>
           <p className="text-xs leading-relaxed text-slate-400">
             Johnson City Garage Door Repair is Johnson City's premier provider of professional residential and commercial overhead door repair, installation, and spring replacement. We operate 24/7 to keep our community safe and secure.
           </p>
@@ -77,34 +90,34 @@ export default function Footer({ onNavigate }: FooterProps) {
           <h3 className="text-white font-bold text-sm uppercase tracking-wider border-b border-slate-800 pb-2">OUR SERVICES</h3>
           <ul className="grid grid-cols-1 gap-2 text-xs">
             <li>
-              <button onClick={() => handleLinkClick('garage-door-repair')} className="hover:text-amber-500 transition-colors text-left">
+              <a {...getLinkProps('garage-door-repair')} className="hover:text-amber-500 transition-colors text-left block">
                 Garage Door Repair
-              </button>
+              </a>
             </li>
             <li>
-              <button onClick={() => handleLinkClick('garage-door-spring-repair')} className="hover:text-amber-500 transition-colors text-left">
+              <a {...getLinkProps('garage-door-spring-repair')} className="hover:text-amber-500 transition-colors text-left block">
                 Garage Door Spring Repair
-              </button>
+              </a>
             </li>
             <li>
-              <button onClick={() => handleLinkClick('garage-door-opener-repair')} className="hover:text-amber-500 transition-colors text-left">
+              <a {...getLinkProps('garage-door-opener-repair')} className="hover:text-amber-500 transition-colors text-left block">
                 Garage Door Opener Repair
-              </button>
+              </a>
             </li>
             <li>
-              <button onClick={() => handleLinkClick('garage-door-opener-installation')} className="hover:text-amber-500 transition-colors text-left">
+              <a {...getLinkProps('garage-door-opener-installation')} className="hover:text-amber-500 transition-colors text-left block">
                 Garage Door Opener Installation
-              </button>
+              </a>
             </li>
             <li>
-              <button onClick={() => handleLinkClick('garage-door-installation')} className="hover:text-amber-500 transition-colors text-left">
+              <a {...getLinkProps('garage-door-installation')} className="hover:text-amber-500 transition-colors text-left block">
                 New Garage Door Installation
-              </button>
+              </a>
             </li>
             <li>
-              <button onClick={() => handleLinkClick('emergency-garage-door-repair')} className="hover:text-amber-500 transition-colors text-left text-amber-400 font-semibold">
+              <a {...getLinkProps('emergency-garage-door-repair')} className="hover:text-amber-500 transition-colors text-left text-amber-400 font-semibold block">
                 24/7 Emergency Repairs
-              </button>
+              </a>
             </li>
           </ul>
         </div>
@@ -115,18 +128,18 @@ export default function Footer({ onNavigate }: FooterProps) {
           <ul className="grid grid-cols-2 gap-2 text-xs">
             {Object.values(citiesData).map((city) => (
               <li key={city.id}>
-                <button
-                  onClick={() => handleLinkClick(`city/${city.id}`)}
+                <a
+                  {...getLinkProps(`city/${city.id}`)}
                   className="hover:text-amber-500 transition-colors text-left text-slate-400 block"
                 >
                   {city.cityName.split(',')[0]}
-                </button>
+                </a>
               </li>
             ))}
             <li className="col-span-2 mt-1 pt-1 border-t border-slate-800">
-              <button onClick={() => handleLinkClick('service-areas')} className="text-blue-400 hover:text-amber-500 transition-colors text-left font-semibold">
+              <a {...getLinkProps('service-areas')} className="text-blue-400 hover:text-amber-500 transition-colors text-left font-semibold block">
                 View All Regions &rarr;
-              </button>
+              </a>
             </li>
           </ul>
         </div>
@@ -178,17 +191,17 @@ export default function Footer({ onNavigate }: FooterProps) {
             </p>
           </div>
           <div className="flex gap-4 text-slate-500">
-            <button onClick={() => handleLinkClick('blog')} className="hover:text-slate-300 font-semibold text-amber-500 transition-colors">
+            <a {...getLinkProps('blog')} className="hover:text-slate-300 font-semibold text-amber-500 transition-colors">
               Blog & Guides
-            </button>
+            </a>
             <span>|</span>
-            <button onClick={() => handleLinkClick('privacy-policy')} className="hover:text-slate-300 transition-colors">
+            <a {...getLinkProps('privacy-policy')} className="hover:text-slate-300 transition-colors">
               Privacy Policy
-            </button>
+            </a>
             <span>|</span>
-            <button onClick={() => handleLinkClick('terms-and-conditions')} className="hover:text-slate-300 transition-colors">
+            <a {...getLinkProps('terms-and-conditions')} className="hover:text-slate-300 transition-colors">
               Terms & Conditions
-            </button>
+            </a>
           </div>
         </div>
       </div>

@@ -113,13 +113,17 @@ export default function BlogIndexView({ onNavigate }: BlogIndexViewProps) {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredPosts.map((post) => (
-              <article
+              <a
                 key={post.slug}
-                onClick={() => {
-                  onNavigate(`blog/${post.slug}`);
-                  window.scrollTo({ top: 0, behavior: 'instant' });
+                href={`/blog/${post.slug}`}
+                onClick={(e) => {
+                  if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                    e.preventDefault();
+                    onNavigate(`blog/${post.slug}`);
+                    window.scrollTo({ top: 0, behavior: 'instant' });
+                  }
                 }}
-                className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col cursor-pointer group hover:-translate-y-1"
+                className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col cursor-pointer group hover:-translate-y-1 block"
               >
                 {/* Featured Image */}
                 <div className="relative h-48 sm:h-52 overflow-hidden bg-slate-100">
@@ -166,7 +170,7 @@ export default function BlogIndexView({ onNavigate }: BlogIndexViewProps) {
                     <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
-              </article>
+              </a>
             ))}
           </div>
         )}

@@ -87,12 +87,18 @@ export default function CityView({ cityId, onNavigate }: CityViewProps) {
             </p>
             <p className="text-slate-600 text-sm md:text-base mt-4 leading-relaxed">
               We focus on executing highly precise repairs and carry top-rated parts backed by exceptional structural warranties. If you need immediate assistance, explore our localized solutions below or check out our primary{' '}
-              <button
-                onClick={handlePrimaryLink}
+              <a
+                href="/garage-door-repair"
+                onClick={(e) => {
+                  if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                    e.preventDefault();
+                    handlePrimaryLink();
+                  }
+                }}
                 className="text-blue-900 font-extrabold hover:text-amber-500 hover:underline inline-block transition-colors cursor-pointer"
               >
                 Garage Door Repair
-              </button>{' '}
+              </a>{' '}
               offerings.
             </p>
           </div>
@@ -171,13 +177,19 @@ export default function CityView({ cityId, onNavigate }: CityViewProps) {
           </div>
 
           {/* Back button to main areas */}
-          <button
-            onClick={() => onNavigate('service-areas')}
+          <a
+            href="/service-areas"
+            onClick={(e) => {
+              if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                e.preventDefault();
+                onNavigate('service-areas');
+              }
+            }}
             className="flex items-center gap-1.5 text-xs font-bold text-blue-900 hover:text-amber-500 transition-colors w-fit cursor-pointer"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to All Service Areas
-          </button>
+          </a>
         </div>
 
         {/* Right Column - Sticky Conversion Sidebar (33%) */}

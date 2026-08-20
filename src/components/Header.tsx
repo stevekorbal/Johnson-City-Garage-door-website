@@ -32,7 +32,20 @@ export default function Header({ currentPath, onNavigate }: HeaderProps) {
     setIsMobileMenuOpen(false);
     setIsServicesDropdownOpen(false);
     setIsAreasDropdownOpen(false);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const getLinkProps = (path: string) => {
+    const clean = path.replace(/^\/|\/$/g, '');
+    const href = clean === 'home' || clean === '' ? '/' : `/${clean}`;
+    return {
+      href,
+      onClick: (e: React.MouseEvent) => {
+        if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+          e.preventDefault();
+          handleLinkClick(clean);
+        }
+      }
+    };
   };
 
   return (
@@ -73,41 +86,41 @@ export default function Header({ currentPath, onNavigate }: HeaderProps) {
       >
         <div className="max-w-7xl mx-auto px-4 md:px-6 flex justify-between items-center">
           {/* Brand Logo */}
-          <div
+          <a
             id="brand-logo"
-            onClick={() => handleLinkClick('home')}
+            {...getLinkProps('home')}
             className="flex items-center gap-2 cursor-pointer group"
           >
             <div className="bg-blue-900 text-white p-2 rounded-lg group-hover:bg-blue-800 transition-colors shadow-inner">
               <span className="font-extrabold text-lg md:text-xl tracking-tight block">JC</span>
             </div>
             <div>
-              <h1 className="font-extrabold text-base md:text-lg tracking-tight text-slate-900 leading-none">
+              <span className="font-extrabold text-base md:text-lg tracking-tight text-slate-900 leading-none block">
                 JOHNSON CITY
-              </h1>
+              </span>
               <span className="text-[10px] md:text-xs font-bold tracking-widest text-blue-900 block mt-0.5">
                 GARAGE DOOR REPAIR
               </span>
             </div>
-          </div>
+          </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-6">
-            <button
-              onClick={() => handleLinkClick('home')}
+            <a
+              {...getLinkProps('home')}
               className={`text-sm font-semibold transition-colors ${
-                currentPath === 'home' ? 'text-blue-900 border-b-2 border-blue-900 pb-0.5' : 'text-slate-600 hover:text-blue-900'
+                currentPath === 'home' || currentPath === '' ? 'text-blue-900 border-b-2 border-blue-900 pb-0.5' : 'text-slate-600 hover:text-blue-900'
               }`}
             >
               Home
-            </button>
+            </a>
 
             {/* Services Dropdown */}
             <div className="relative">
               <button
                 onMouseEnter={() => setIsServicesDropdownOpen(true)}
                 onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
-                className="text-sm font-semibold text-slate-600 hover:text-blue-900 flex items-center gap-1 py-1"
+                className="text-sm font-semibold text-slate-600 hover:text-blue-900 flex items-center gap-1 py-1 cursor-pointer"
               >
                 Services
                 <ChevronDown className="w-4 h-4" />
@@ -122,13 +135,13 @@ export default function Header({ currentPath, onNavigate }: HeaderProps) {
                   </div>
                   <div className="max-h-[380px] overflow-y-auto custom-scrollbar px-1">
                     {Object.values(servicesData).map((service) => (
-                      <button
+                      <a
                         key={service.id}
-                        onClick={() => handleLinkClick(`${service.id}`)}
+                        {...getLinkProps(service.id)}
                         className="w-full text-left px-3 py-2 rounded-lg text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-900 transition-all flex items-center justify-between"
                       >
                         <span className="truncate">{service.title.split('|')[0]}</span>
-                      </button>
+                      </a>
                     ))}
                   </div>
                 </div>
@@ -140,7 +153,7 @@ export default function Header({ currentPath, onNavigate }: HeaderProps) {
               <button
                 onMouseEnter={() => setIsAreasDropdownOpen(true)}
                 onClick={() => setIsAreasDropdownOpen(!isAreasDropdownOpen)}
-                className="text-sm font-semibold text-slate-600 hover:text-blue-900 flex items-center gap-1 py-1"
+                className="text-sm font-semibold text-slate-600 hover:text-blue-900 flex items-center gap-1 py-1 cursor-pointer"
               >
                 Service Areas
                 <ChevronDown className="w-4 h-4" />
@@ -153,69 +166,69 @@ export default function Header({ currentPath, onNavigate }: HeaderProps) {
                   <div className="px-4 py-1.5 text-xs font-bold text-slate-400 uppercase tracking-wider border-b border-slate-100 mb-1">
                     Cities We Serve
                   </div>
-                  <button
-                    onClick={() => handleLinkClick('service-areas')}
+                  <a
+                    {...getLinkProps('service-areas')}
                     className="w-full text-left px-4 py-2 text-xs font-bold text-blue-900 hover:bg-slate-50 block transition-colors"
                   >
                     View All Regions
-                  </button>
+                  </a>
                   {Object.values(citiesData).map((city) => (
-                    <button
+                    <a
                       key={city.id}
-                      onClick={() => handleLinkClick(`city/${city.id}`)}
+                      {...getLinkProps(`city/${city.id}`)}
                       className="w-full text-left px-4 py-1.5 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-900 transition-colors block"
                     >
                       {city.cityName}
-                    </button>
+                    </a>
                   ))}
                 </div>
               )}
             </div>
 
-            <button
-              onClick={() => handleLinkClick('why-choose-us')}
+            <a
+              {...getLinkProps('why-choose-us')}
               className={`text-sm font-semibold transition-colors ${
                 currentPath === 'why-choose-us' ? 'text-blue-900 border-b-2 border-blue-900 pb-0.5' : 'text-slate-600 hover:text-blue-900'
               }`}
             >
               Why Choose Us
-            </button>
+            </a>
 
-            <button
-              onClick={() => handleLinkClick('about')}
+            <a
+              {...getLinkProps('about')}
               className={`text-sm font-semibold transition-colors ${
                 currentPath === 'about' ? 'text-blue-900 border-b-2 border-blue-900 pb-0.5' : 'text-slate-600 hover:text-blue-900'
               }`}
             >
               About Us
-            </button>
+            </a>
 
-            <button
-              onClick={() => handleLinkClick('faqs')}
+            <a
+              {...getLinkProps('faqs')}
               className={`text-sm font-semibold transition-colors ${
                 currentPath === 'faqs' ? 'text-blue-900 border-b-2 border-blue-900 pb-0.5' : 'text-slate-600 hover:text-blue-900'
               }`}
             >
               FAQs
-            </button>
+            </a>
 
-            <button
-              onClick={() => handleLinkClick('blog')}
+            <a
+              {...getLinkProps('blog')}
               className={`text-sm font-semibold transition-colors ${
                 currentPath === 'blog' || currentPath.startsWith('blog/') ? 'text-blue-900 border-b-2 border-blue-900 pb-0.5' : 'text-slate-600 hover:text-blue-900'
               }`}
             >
               Blog
-            </button>
+            </a>
 
-            <button
-              onClick={() => handleLinkClick('contact')}
+            <a
+              {...getLinkProps('contact')}
               className={`text-sm font-semibold transition-colors ${
                 currentPath === 'contact' ? 'text-blue-900 border-b-2 border-blue-900 pb-0.5' : 'text-slate-600 hover:text-blue-900'
               }`}
             >
               Contact
-            </button>
+            </a>
           </nav>
 
           {/* Contact CTA Button (Amber Warning Alert Style for CRO) */}
@@ -245,12 +258,12 @@ export default function Header({ currentPath, onNavigate }: HeaderProps) {
       {isMobileMenuOpen && (
         <div className="lg:hidden w-full bg-white border-b border-slate-200 py-4 px-4 shadow-inner">
           <div className="flex flex-col gap-3">
-            <button
-              onClick={() => handleLinkClick('home')}
-              className="text-left py-2 font-semibold text-slate-800 hover:text-blue-900 text-sm border-b border-slate-50"
+            <a
+              {...getLinkProps('home')}
+              className="text-left py-2 font-semibold text-slate-800 hover:text-blue-900 text-sm border-b border-slate-50 block"
             >
               Home
-            </button>
+            </a>
 
             {/* Mobile Services Expansion */}
             <div className="border-b border-slate-50 py-1">
@@ -259,13 +272,13 @@ export default function Header({ currentPath, onNavigate }: HeaderProps) {
               </span>
               <div className="grid grid-cols-1 gap-1.5 pl-2 max-h-[180px] overflow-y-auto">
                 {Object.values(servicesData).map((service) => (
-                  <button
+                  <a
                     key={service.id}
-                    onClick={() => handleLinkClick(`${service.id}`)}
+                    {...getLinkProps(service.id)}
                     className="text-left text-xs font-medium text-slate-700 hover:text-blue-900 py-1 block"
                   >
                     • {service.title.split('|')[0]}
-                  </button>
+                  </a>
                 ))}
               </div>
             </div>
@@ -276,58 +289,58 @@ export default function Header({ currentPath, onNavigate }: HeaderProps) {
                 Local Cities Served
               </span>
               <div className="grid grid-cols-2 gap-2 pl-2">
-                <button
-                  onClick={() => handleLinkClick('service-areas')}
+                <a
+                  {...getLinkProps('service-areas')}
                   className="text-left text-xs font-bold text-blue-900 py-1 block col-span-2"
                 >
                   View All Regions
-                </button>
+                </a>
                 {Object.values(citiesData).map((city) => (
-                  <button
+                  <a
                     key={city.id}
-                    onClick={() => handleLinkClick(`city/${city.id}`)}
+                    {...getLinkProps(`city/${city.id}`)}
                     className="text-left text-xs font-medium text-slate-700 hover:text-blue-900 py-1 block"
                   >
                     • {city.cityName}
-                  </button>
+                  </a>
                 ))}
               </div>
             </div>
 
-            <button
-              onClick={() => handleLinkClick('why-choose-us')}
-              className="text-left py-2 font-semibold text-slate-800 hover:text-blue-900 text-sm border-b border-slate-50"
+            <a
+              {...getLinkProps('why-choose-us')}
+              className="text-left py-2 font-semibold text-slate-800 hover:text-blue-900 text-sm border-b border-slate-50 block"
             >
               Why Choose Us
-            </button>
+            </a>
 
-            <button
-              onClick={() => handleLinkClick('about')}
-              className="text-left py-2 font-semibold text-slate-800 hover:text-blue-900 text-sm border-b border-slate-50"
+            <a
+              {...getLinkProps('about')}
+              className="text-left py-2 font-semibold text-slate-800 hover:text-blue-900 text-sm border-b border-slate-50 block"
             >
               About Us
-            </button>
+            </a>
 
-            <button
-              onClick={() => handleLinkClick('faqs')}
-              className="text-left py-2 font-semibold text-slate-800 hover:text-blue-900 text-sm border-b border-slate-50"
+            <a
+              {...getLinkProps('faqs')}
+              className="text-left py-2 font-semibold text-slate-800 hover:text-blue-900 text-sm border-b border-slate-50 block"
             >
               FAQs
-            </button>
+            </a>
 
-            <button
-              onClick={() => handleLinkClick('blog')}
-              className="text-left py-2 font-semibold text-slate-800 hover:text-blue-900 text-sm border-b border-slate-50"
+            <a
+              {...getLinkProps('blog')}
+              className="text-left py-2 font-semibold text-slate-800 hover:text-blue-900 text-sm border-b border-slate-50 block"
             >
               Blog
-            </button>
+            </a>
 
-            <button
-              onClick={() => handleLinkClick('contact')}
-              className="text-left py-2 font-semibold text-slate-800 hover:text-blue-900 text-sm border-b border-slate-50"
+            <a
+              {...getLinkProps('contact')}
+              className="text-left py-2 font-semibold text-slate-800 hover:text-blue-900 text-sm border-b border-slate-50 block"
             >
               Contact
-            </button>
+            </a>
 
             {/* Mobile Contact Button */}
             <div className="pt-2 flex flex-col gap-2">
@@ -338,12 +351,12 @@ export default function Header({ currentPath, onNavigate }: HeaderProps) {
                 <Phone className="w-4 h-4 fill-current" />
                 CALL NOW: (423) 672-1770
               </a>
-              <button
-                onClick={() => handleLinkClick('contact')}
-                className="bg-blue-900 text-white py-3 rounded-lg font-bold text-sm text-center"
+              <a
+                {...getLinkProps('contact')}
+                className="bg-blue-900 text-white py-3 rounded-lg font-bold text-sm text-center block"
               >
                 Request Free Estimate
-              </button>
+              </a>
             </div>
           </div>
         </div>

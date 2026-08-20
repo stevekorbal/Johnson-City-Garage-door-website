@@ -196,16 +196,20 @@ export default function BlogPostView({ slug, onNavigate }: BlogPostViewProps) {
 
           {/* Navigation link back to blog index */}
           <div>
-            <button
-              onClick={() => {
-                onNavigate('blog');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+            <a
+              href="/blog"
+              onClick={(e) => {
+                if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                  e.preventDefault();
+                  onNavigate('blog');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
               }}
-              className="inline-flex items-center gap-2 text-xs font-bold text-slate-700 hover:text-blue-900 transition-colors bg-white px-4 py-2.5 rounded-xl border border-slate-200 shadow-sm"
+              className="inline-flex items-center gap-2 text-xs font-bold text-slate-700 hover:text-blue-900 transition-colors bg-white px-4 py-2.5 rounded-xl border border-slate-200 shadow-sm cursor-pointer"
             >
               <ArrowLeft className="w-4 h-4 text-amber-500" />
               Back to Blog Overview
-            </button>
+            </a>
           </div>
 
           {/* Bottom Section: Service Card & Related Articles */}
@@ -260,13 +264,17 @@ export default function BlogPostView({ slug, onNavigate }: BlogPostViewProps) {
                   </h3>
                   <div className="flex flex-col gap-3">
                     {relatedPosts.map((rel) => (
-                      <article
+                      <a
                         key={rel.slug}
-                        onClick={() => {
-                          onNavigate(`blog/${rel.slug}`);
-                          window.scrollTo({ top: 0, behavior: 'instant' });
+                        href={`/blog/${rel.slug}`}
+                        onClick={(e) => {
+                          if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                            e.preventDefault();
+                            onNavigate(`blog/${rel.slug}`);
+                            window.scrollTo({ top: 0, behavior: 'instant' });
+                          }
                         }}
-                        className="group cursor-pointer flex flex-col gap-1 pb-2.5 border-b border-slate-100 last:border-0 last:pb-0"
+                        className="group cursor-pointer flex flex-col gap-1 pb-2.5 border-b border-slate-100 last:border-0 last:pb-0 block text-left"
                       >
                         <span className="text-[10px] font-bold text-amber-600 uppercase">
                           {rel.category}
@@ -277,7 +285,7 @@ export default function BlogPostView({ slug, onNavigate }: BlogPostViewProps) {
                         <span className="text-[11px] text-slate-500 font-medium">
                           {formatDate(rel.date)}
                         </span>
-                      </article>
+                      </a>
                     ))}
                   </div>
                 </div>

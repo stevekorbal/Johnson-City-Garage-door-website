@@ -243,14 +243,20 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                   </div>
 
                   <div className="mt-8 pt-6 border-t border-slate-100 flex items-center gap-4">
-                    <button
-                      onClick={() => handleServiceClick(service.id)}
+                    <a
+                      href={`/${service.id}`}
+                      onClick={(e) => {
+                        if (!e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                          e.preventDefault();
+                          handleServiceClick(service.id);
+                        }
+                      }}
                       id={`btn-learn-more-${service.id}`}
                       className="bg-blue-900 hover:bg-blue-850 text-white font-extrabold text-xs md:text-sm py-3 px-6 rounded-xl transition-all shadow-sm flex items-center gap-2 group-hover:shadow cursor-pointer active:scale-98"
                     >
                       <span>Explore Details</span>
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                    </button>
+                    </a>
                     <a
                       href="tel:4236721770"
                       className="text-xs md:text-sm font-extrabold text-slate-700 hover:text-amber-500 transition-colors flex items-center gap-1.5"
