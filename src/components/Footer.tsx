@@ -164,8 +164,8 @@ export default function Footer({ onNavigate }: FooterProps) {
             </li>
             <li className="flex items-center gap-2">
               <Mail className="w-4 h-4 text-amber-500 shrink-0" />
-              <a href="mailto:contact@garagedoorrepairjohnsoncity.co" className="hover:text-white transition-colors">
-                contact@garagedoorrepairjohnsoncity.co
+              <a href="mailto:contact@garagedoorrepairjohnsoncity.com" className="hover:text-white transition-colors">
+                contact@garagedoorrepairjohnsoncity.com
               </a>
             </li>
             <li className="flex items-start gap-2">
