@@ -134,9 +134,9 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             <span className="inline-block text-xs md:text-sm font-black text-amber-400 uppercase tracking-widest bg-amber-950/60 px-3 py-1.5 rounded-full border border-amber-800/40 w-fit">
               ★ Same-Day Service in Johnson City & Surrounding Areas ★
             </span>
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight md:leading-none text-slate-100">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight md:leading-none text-slate-100">
               Garage Door Repair Johnson City TN <span className="text-amber-400">Fast & Reliable Service</span>
-            </h2>
+            </h1>
             <p className="text-sm md:text-lg text-slate-200 leading-relaxed max-w-xl">
               Broken springs? Noisy opener? Stuck door? Get fully certified, local professionals at your door today. We specialize in fast-response repairs and premium installations.
             </p>
